@@ -19,9 +19,9 @@ booksRouter.put('/:id/addToCart', (req, res) => {
   res.send();
 });
 
-booksRouter.put('?search', (req, res) => {
-  const books = getBooksList();
-  res.send(books);
-});
+// booksRouter.put('?search', (req, res) => {
+//   const books = getBooksList();
+//   res.send(books);
+// });
 
 export default booksRouter;
