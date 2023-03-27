@@ -1,8 +1,11 @@
-import "reflect-metadata";
+import 'reflect-metadata';
 import express from 'express';
 
 import baseRouter from './routes';
 import {reactPages, pagesHandler, startReactServer} from './react-dev-server';
+import {postgresDS} from './data-source';
+
+postgresDS.initialize();
 
 const app = express();
 const port = 3000;

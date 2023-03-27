@@ -1,5 +1,7 @@
+import {booksRepository} from '../repositories/books';
+
 export function getBooksList() {
-  return [];
+  return booksRepository.find();
 }
 
 export function getBook() {

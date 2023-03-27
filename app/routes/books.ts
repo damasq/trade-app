@@ -3,8 +3,8 @@ import {getBooksList, getBook, addToCart} from '../controllers/books';
 
 const booksRouter = express.Router();
 
-booksRouter.get('/', (req, res) => {
-  const books = getBooksList();
+booksRouter.get('/', async (req, res) => {
+  const books = await getBooksList();
   res.send(books);
 });
 
