@@ -1,5 +1,5 @@
 import express from 'express';
-import {getBooksList, getBook, addToCart} from '../controllers/books';
+import {getBooksList, getBook, updateCart} from '../controllers/books';
 
 const booksRouter = express.Router();
 
@@ -8,15 +8,14 @@ booksRouter.get('/', async (req, res) => {
   res.send(books);
 });
 
-booksRouter.get('/:id', (req, res) => {
-  const book = getBook();
+booksRouter.get('/:id', async (req, res) => {
+  const book = await getBook(req.params.id);
   res.send(book);
 });
 
-booksRouter.put('/:id/addToCart', (req, res) => {
-  // const book = getBook();
-  addToCart();
-  res.send();
+booksRouter.put('/:id/updateCart', async (req, res) => {
+  await updateCart(req.params.id);
+  // res.send();
 });
 
 // booksRouter.put('?search', (req, res) => {

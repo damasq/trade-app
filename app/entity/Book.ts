@@ -1,7 +1,7 @@
-import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn, BaseEntity} from 'typeorm';
 
-@Entity()
-export class Book {
+@Entity('books')
+export class Book extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -9,8 +9,11 @@ export class Book {
   author: string;
 
   @Column()
-  name: string;
+  title: string;
 
   @Column()
   description: string;
+
+  @Column()
+  isInCart: boolean;
 }

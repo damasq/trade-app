@@ -4,10 +4,10 @@ export function getBooksList() {
   return booksRepository.find();
 }
 
-export function getBook() {
-  return {};
+export function getBook(id) {
+  return booksRepository.findOneBy({id});
 }
 
-export function addToCart() {
-  return [];
+export function updateCart(id) {
+  return booksRepository.update(id, { isInCart: true});
 }
