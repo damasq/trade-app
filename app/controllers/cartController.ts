@@ -11,5 +11,5 @@ export function removeAllBooks() {
 }
 
 export function buyBooks() {
-    return [];
-  }
+  return [];
+}
