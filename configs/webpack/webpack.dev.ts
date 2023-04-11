@@ -11,6 +11,20 @@ const config: Configuration = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[local]-[hash:base64:5]',
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
