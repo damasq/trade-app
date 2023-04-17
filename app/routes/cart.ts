@@ -1,5 +1,5 @@
 import express from 'express';
-import { getCartBooksList, removeBook, removeAllBooks, buyBooks } from '../controllers/cart';
+import { getCartBooksList, removeBook, removeAllBooks, buyBooks } from '../controllers/cartController';
 
 const cartRouter = express.Router();
 
