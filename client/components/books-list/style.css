@@ -1,0 +1,13 @@
+.container {
+  /* box-sizing: ; */
+  /* border: 5px solid green; */
+  /* padding-top: 56px;
+  padding-left: 8px;
+  padding-right: 8px; */
+  /* padding: 56px 12px 12px 12px; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* gap: 12px; */
+  /* gap: 1%; */
+}

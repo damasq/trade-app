@@ -12,14 +12,6 @@ const config: Configuration = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
-      },
-      {
         test: /\.css$/i,
         use: [
           'style-loader',
@@ -33,6 +25,18 @@ const config: Configuration = {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      // {
+      //   test: /\.svg$/,
+      //   loader: 'svg-inline-loader',
+      // },
     ],
   },
   resolve: {
