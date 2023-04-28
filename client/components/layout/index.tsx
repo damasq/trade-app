@@ -7,6 +7,7 @@ import cartIcon from './Basket_alt_2_light.svg';
 import BookPage from '../book-page';
 import CartPage from '../cart';
 import BooksList from '../books-list';
+import {Link, Outlet} from 'react-router-dom';
 
 console.log('sad', logo);
 
@@ -24,18 +25,13 @@ const Layout = () => {
 
         <div className={styles.container}>
           <img src={searchIcon} alt="" />
-          <img id={styles.cartIcon} src={cartIcon} alt="" />
+          <Link to="cart">
+            <img id={styles.cartIcon} src={cartIcon} alt="" />
+          </Link>
         </div>
       </header>
       <main className={styles.content}>
-        {/* <BookItem />
-        <BookItem />
-        <BookItem />
-        <BookItem />
-        <BookItem /> */}
-        <BookPage />
-        {/* <BooksList /> */}
-        {/* <CartPage /> */}
+        <Outlet />
       </main>
     </div>
   );
