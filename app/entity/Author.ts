@@ -1,4 +1,4 @@
-import {BaseEntity, Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
+import {BaseEntity, Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn, Relation} from 'typeorm';
 import {Book} from './Book';
 
 @Entity('author')
@@ -12,7 +12,7 @@ export class Author extends BaseEntity {
   @Column()
   lastName: string;
 
-  @OneToMany(type => Book, book => book.author)
-  // @JoinColumn()
+  @OneToMany(type => Book, books => books.author)
   books: Book[];
+  author: Promise<Book[]>;
 }

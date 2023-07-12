@@ -1,19 +1,16 @@
 import {useSelector} from 'react-redux';
-import BookItem from '../book-item';
+import {Book} from '../../types';
+import BookItem from '../../components/book-item';
 import styles from './style.css';
 import {booksSelector} from '../../redux';
-import {IBook} from '../../types';
+import {useAppSelector} from '../../redux/hooks';
 
-const BooksList = () => {
-  const books = useSelector(booksSelector.all);
-  console.log(books);
+const CartPage = () => {
+  const books = useAppSelector(booksSelector.inCart);
 
   return (
     <div className={styles.container}>
       {/* <BookItem />
-      <BookItem />
-      <BookItem />
-      <BookItem />
       <BookItem />
       <BookItem />
       <BookItem /> */}
@@ -24,4 +21,4 @@ const BooksList = () => {
   );
 };
 
-export default BooksList;
+export default CartPage;

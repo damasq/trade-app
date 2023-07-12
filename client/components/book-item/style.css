@@ -1,5 +1,5 @@
-.container {
-  min-height: 360px;
+.wrapper {
+  /* min-height: 360px; */
   /* width: 180px; */
   width: 49%;
   /* width: 50%; */
@@ -25,9 +25,9 @@
   padding: 4px 8px;
 }
 
-.infoBlock {
+.container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -43,12 +43,11 @@
   margin-bottom: 4px;
 }
 
-.rating img {
-  display: inline-block;
-}
-
-.rating p {
-  display: inline-block;
+.rating,
+.priceAndButton {
+  display: flex;
+  /* align-items: center; */
+  line-height: 0;
 }
 
 .price {
@@ -57,6 +56,7 @@
 
 .addButton {
   background: none;
+  line-height: 0;
   /* width: 35px;
   height: 32px; */
   padding: 0;

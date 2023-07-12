@@ -1,4 +1,4 @@
-export interface IBook {
+export interface Book {
   cover: string;
   title: string;
   author: string;
@@ -7,6 +7,7 @@ export interface IBook {
   inCart: boolean;
 }
 
-export interface IBooksState {
-  data: IBook[];
+export interface BooksState {
+  data: Book[];
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
 }

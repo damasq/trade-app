@@ -4,48 +4,63 @@ import {Book} from '../entity/Book';
 import {booksRepository} from '../repositories/books';
 import {createAuthor, getAuthor, getAuthorsList, saveAuthor} from '../controllers/authorController';
 import {Author} from '../entity/Author';
+import {postgresDS} from '../data-source';
 
 const booksRouter = express.Router();
 
 booksRouter.get('/', async (req, res) => {
   const books = await getBooksList();
+  console.log('we are here');
   res.send(books);
 });
 
 // ---- add new to DB ----
 
 booksRouter.get('/add_a', async (req, res) => {
-  const authorData = {
-    firstName: 'Number',
-    lastName: 'One',
-  };
+  const author = new Author();
+  author.firstName = 'Number';
+  author.lastName = 'Ten';
 
-  const author = createAuthor(authorData);
+  const book = new Book();
+  book.title = 'BOOK_15';
+  book.description = 'DESCRIPTION_15';
+  book.price = 100;
+  book.rating = 4;
 
-  await saveAuthor(author);
-  const authors = await getAuthorsList();
-  res.json(authors);
+  author.books = [...author.books, book];
+
+  const authorsRepository = postgresDS.getRepository(Author);
+  const booksRepository = postgresDS.getRepository(Book);
+
+  // await authorsRepository.save(author);
+  await booksRepository.save(book);
+
+  const savedAuthors = await authorsRepository.find();
+  const savedBooks = await booksRepository.find();
+
+  console.log(savedAuthors);
+  console.log(savedBooks);
+  // await saveAuthor(author);
+  // const authors = await getAuthorsList();
+  res.json([savedAuthors, savedBooks]);
 });
 
 booksRouter.get('/add_b', async (req, res) => {
-  // const author = await getAuthor(1)
-  // console.log('books:', books);
+  const authorsRepository = postgresDS.getRepository(Author);
+  const authors = await authorsRepository.find({
+    relations: {
+      books: true,
+    },
+  });
 
-  const author = (await getAuthor(1)) as Author;
+  // const authors1 = await postgresDS
+  //   .getRepository(Author)
+  //   .createQueryBuilder('author')
+  //   .innerJoinAndSelect('author.book', 'book')
+  //   .getMany();
 
-  const book = {
-    title: 'BOOK_1',
-    description: 'DESCRIPTION_1',
-    author_id: author.id,
-  };
-
-  console.log('author:', author);
-
-  await saveBook(book);
-  await saveAuthor(author);
-
-  const books = await getBooksList();
-  res.json(books);
+  console.log(authors);
+  res.json(authors);
 });
 
 booksRouter.get('/add_b2', async (req, res) => {

@@ -1,7 +1,7 @@
-import {Entity, Column, PrimaryGeneratedColumn, BaseEntity, ManyToOne, JoinColumn} from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn, BaseEntity, ManyToOne, JoinColumn, OneToOne, Relation} from 'typeorm';
 import {Author} from './Author';
 
-@Entity('book')
+@Entity('books')
 export class Book extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -12,13 +12,12 @@ export class Book extends BaseEntity {
   @Column()
   description: string;
 
-  // @Column()
-  // isInCart: boolean;
+  @Column()
+  rating: number;
 
-  @ManyToOne(type => Author, author => author.books, {eager: true})
-  // @JoinColumn()
-  @JoinColumn({
-    name: 'author_id',
-  })
+  @Column()
+  price: number;
+
+  @ManyToOne(type => Author, author => author.books)
   author: Author;
 }

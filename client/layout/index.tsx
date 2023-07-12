@@ -1,15 +1,15 @@
-import BookItem from '../book-item';
+import BookItem from '../components/book-item';
 import styles from './style.css';
-import menuIcon from './Menu.svg';
-import logo from './logo.svg';
-import searchIcon from './Search_light.svg';
-import cartIcon from './Basket_alt_2_light.svg';
-import BookPage from '../book-page';
-import CartPage from '../cart';
-import BooksList from '../books-list';
+import menuIcon from './img/Menu.svg';
+import logo from './img/logo.svg';
+import searchIcon from './img/Search_light.svg';
+import cartIcon from './img/Basket_alt_2_light.svg';
+import BookPage from '../pages/book-page';
+import CartPage from '../pages/cart';
+import BooksList from '../pages/books-list';
 import {Link, Outlet} from 'react-router-dom';
 
-console.log('sad', logo);
+// console.log('sad', logo);
 
 const Layout = () => {
   // const logo = require('./Logo.svg') as string;

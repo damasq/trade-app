@@ -11,5 +11,5 @@ export const postgresDS = new DataSource({
   database: 'bookstalldb',
   synchronize: true,
   entities: [Book, Author],
-  // dropSchema: true,
+  dropSchema: true,
 });
