@@ -1,6 +1,8 @@
 import {DataSource} from 'typeorm';
-import {Book} from './entity/Book';
 import {Author} from './entity/Author';
+import {Book} from './entity/Book';
+import {Offer} from './entity/Offer';
+import {User} from './entity/User';
 
 export const postgresDS = new DataSource({
   type: 'postgres',
@@ -10,6 +12,6 @@ export const postgresDS = new DataSource({
   password: 'pgpwd4h',
   database: 'bookstalldb',
   synchronize: true,
-  entities: [Book, Author],
+  entities: [Book, Author, User, Offer],
   dropSchema: true,
 });

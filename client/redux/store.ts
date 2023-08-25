@@ -1,9 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit';
 import booksReducer from './booksReducer';
+import offerReducer from './offerReducer';
 
 const store = configureStore({
   reducer: {
     books: booksReducer,
+    offers: offerReducer,
   },
 });
 

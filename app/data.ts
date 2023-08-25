@@ -27,52 +27,44 @@ const data = [
 
 export default data;
 
-const data1 = [
+export const offersMock = [
   {
-    firstName: 'Number',
-    lastName: 'One',
-    books: [
+    username: 'USERNAME-1',
+    offers: [
       {
-        title: 'BOOK_1',
-        description: 'DESCRIPTION_1',
-        price: 111,
-        rating: 1,
+        give: 'GIVE-1',
+        want: 'WANT-1',
+        date: new Date().toString(),
       },
       {
-        title: 'BOOK_2',
-        description: 'DESCRIPTION_2',
-        price: 222,
-        rating: 2,
-      },
-      {
-        title: 'BOOK_3',
-        description: 'DESCRIPTION_3',
-        price: 333,
-        rating: 3,
+        give: 'GIVE-01',
+        want: 'WANT-01',
+        date: new Date().toString(),
       },
     ],
   },
   {
-    firstName: 'Number',
-    lastName: 'Two',
-    books: [
+    username: 'USERNAME-2',
+    offers: [
       {
-        title: 'book_1',
-        description: 'description_1',
-        price: 11100,
-        rating: 1,
+        give: 'GIVE-2',
+        want: 'WANT-2',
+        date: new Date().toString(),
+      },
+    ],
+  },
+  {
+    username: 'USERNAME-3',
+    offers: [
+      {
+        give: 'GIVE-3',
+        want: 'WANT-3',
+        date: new Date().toString(),
       },
       {
-        title: 'book_2',
-        description: 'description_2',
-        price: 22200,
-        rating: 2,
-      },
-      {
-        title: 'book_3',
-        description: 'description_3',
-        price: 33300,
-        rating: 3,
+        give: 'GIVE-03',
+        want: 'WANT-03',
+        date: new Date().toString(),
       },
     ],
   },

@@ -1,0 +1,8 @@
+.wrapper {
+  border: 1px solid;
+  padding: 10px;
+}
+
+.offerItem p {
+  margin-bottom: 10px;
+}
