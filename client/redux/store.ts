@@ -1,10 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
-import booksReducer from './booksReducer';
+import userReducer from './userReducer';
 import offerReducer from './offerReducer';
 
 const store = configureStore({
   reducer: {
-    books: booksReducer,
+    user: userReducer,
     offers: offerReducer,
   },
 });

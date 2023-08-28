@@ -1,6 +1,5 @@
 import {createAsyncThunk, createEntityAdapter, createSlice} from '@reduxjs/toolkit';
 
-import {BooksState} from '../types';
 import axios from 'axios';
 
 const initialState = {
@@ -10,21 +9,10 @@ const initialState = {
       give: 'GIVE-1',
       want: 'WANT-1',
       date: new Date().toString(),
-      user: 'USERNAME-1',
-    },
-    {
-      id: 2,
-      give: 'GIVE-2',
-      want: 'WANT-2',
-      date: new Date().toString(),
-      user: 'USERNAME-2',
-    },
-    {
-      id: 3,
-      give: 'GIVE-3',
-      want: 'WANT-3',
-      date: new Date().toString(),
-      user: 'USERNAME-3',
+      user: {
+        id: 1,
+        username: 'user',
+      },
     },
   ],
   status: 'idle',
@@ -36,13 +24,10 @@ export const fetchOffers = createAsyncThunk('offer/fetchOffers', async () => {
 });
 
 const offerSlice = createSlice({
-  name: 'books',
+  name: 'offers',
   initialState,
-  reducers: {
-    rateBook() {},
-    addBookToCart() {},
-    // addBookToCart(){},
-  },
+  reducers: {},
+
   extraReducers: builder => {
     builder.addCase(fetchOffers.fulfilled, (state, action) => {
       state.data = action.payload;
@@ -50,6 +35,6 @@ const offerSlice = createSlice({
   },
 });
 
-export const {rateBook, addBookToCart} = offerSlice.actions;
+// export const {rateBook, addBookToCart} = offerSlice.actions;
 
 export default offerSlice.reducer;

@@ -1,32 +1,3 @@
-const data = [
-  {
-    firstName: 'Number',
-    lastName: 'One',
-    books: [
-      {
-        title: 'BOOK_1',
-        description: 'DESCRIPTION_1',
-        price: 111,
-        rating: 1,
-      },
-      {
-        title: 'BOOK_2',
-        description: 'DESCRIPTION_2',
-        price: 222,
-        rating: 2,
-      },
-      {
-        title: 'BOOK_3',
-        description: 'DESCRIPTION_3',
-        price: 333,
-        rating: 3,
-      },
-    ],
-  },
-];
-
-export default data;
-
 export const offersMock = [
   {
     username: 'USERNAME-1',

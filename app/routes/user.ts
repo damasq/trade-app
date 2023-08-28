@@ -5,13 +5,19 @@ import {User} from '../entity/User';
 
 const userRouter = express.Router();
 
-userRouter.get('/', async (req, res) => {
-  const users = await postgresDS.getRepository(User).find({
-    relations: {
-      offers: true,
-    },
-  });
-  res.send(users);
+userRouter.get('/:id', async (req, res) => {
+  const id = Number(req.params.id);
+  const user = await postgresDS.getRepository(User).findOneBy({id});
+  res.send(user);
 });
+
+// userRouter.get('/', async (req, res) => {
+//   const users = await postgresDS.getRepository(User).find({
+//     relations: {
+//       offers: true,
+//     },
+//   });
+//   res.send(users);
+// });
 
 export default userRouter;
