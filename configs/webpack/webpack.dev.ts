@@ -41,6 +41,7 @@ const config: Configuration = {
   output: {
     path: path.resolve(process.cwd(), 'build'),
     filename: 'index_bundle.js',
+    publicPath: '/',
   },
   plugins: [
     new HtmlWebpackPlugin({

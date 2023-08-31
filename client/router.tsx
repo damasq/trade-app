@@ -8,10 +8,9 @@ export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index={true} element={<OffersList />} />
-      <Route path="user/:id" element={<UserProfile />} />
-      {/* <Route path="user">
-        <Route path="id" element={<UserProfile />} />
-      </Route> */}
+      <Route path="user">
+        <Route path=":id" element={<UserProfile />} />
+      </Route>
       <Route path="offers/:id" element={<OfferPage />} />
     </Route>,
   ),
