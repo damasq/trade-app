@@ -30,7 +30,7 @@ const initialState = {
 // });
 
 export const fetchProfile = createAsyncThunk('user/fetchProfile', async (id: number, thunkAPI) => {
-  const response = await axios.get(`/api/user/${id}`);
+  const response = await axios.get(`/api/users/${id}`);
   return response.data;
 });
 

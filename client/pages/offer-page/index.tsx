@@ -1,19 +1,37 @@
-import {useParams} from 'react-router-dom';
+import {useEffect} from 'react';
+import {Link, useParams} from 'react-router-dom';
+import {useAppDispatch, useAppSelector} from '../../redux/hooks';
+import {fetchOfferById} from '../../redux/offerReducer';
 import styles from './style.css';
 
 const OfferPage = () => {
+  const offer = useAppSelector(state => state.offers.single);
+  const dispatch = useAppDispatch();
   const params = useParams();
+  // console.log(123123, params);
+  // console.log(123123, Number(params.id));
+  console.log(offer);
+
+  // fetchOfferById(id)
+
+  useEffect(() => {
+    dispatch(fetchOfferById(Number(params.id)));
+  }, []);
+
   return (
     <div className={styles.wrapper}>
-      <div className={styles.offerItem}>
-        <p>USERNAME-3</p>
-        <p>WANT</p>
+      <span className={`${styles.linkStyle} ${styles.profileLink}`}>
+        <Link to={`/users/${offer.user.id}`}>{offer.user.username}</Link>
+      </span>
+      <p>{offer.want}</p>
 
-        <p>GIVE</p>
+      <p>{offer.give}</p>
 
-        <p>WANT</p>
-        <button>Open</button>
+      <div className={styles.bottomBlock}>
+        <p className={styles.date}>{offer.date}</p>
       </div>
+
+      <button>Open chat</button>
     </div>
   );
 };

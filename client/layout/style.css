@@ -38,7 +38,7 @@
   /* padding-top: 56px;
   padding-left: 8px;
   padding-right: 8px; */
-  padding: 56px 12px 12px 12px;
+  /* padding: 56px 12px 12px 12px; */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -46,11 +46,12 @@
 }
 
 .content {
-  padding: 56px 12px 12px 12px;
+  /* padding: 56px 12px 12px 12px; */
   /* padding: 0 10px; */
   width: 100%;
   min-height: 100vh;
   
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }

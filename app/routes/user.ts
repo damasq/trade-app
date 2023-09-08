@@ -7,7 +7,15 @@ const userRouter = express.Router();
 
 userRouter.get('/:id', async (req, res) => {
   const id = Number(req.params.id);
-  const user = await postgresDS.getRepository(User).findOneBy({id});
+  const user = await postgresDS.getRepository(User).findOne({
+    where: {
+      id,
+    },
+    relations: {
+      offers: true,
+    },
+  });
+  //
   res.send(user);
 });
 

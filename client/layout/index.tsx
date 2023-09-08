@@ -11,7 +11,7 @@ const Layout = () => {
   // const logo = require('./Logo.svg') as string;
   return (
     <div className={styles.wrapper}>
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         <div className={styles.container}>
           <img src={menuIcon} alt="" />
           <div id={styles.mock}></div>
@@ -25,7 +25,7 @@ const Layout = () => {
             <img id={styles.cartIcon} src={cartIcon} alt="" />
           </Link>
         </div>
-      </header>
+      </header> */}
       <main className={styles.content}>
         <Outlet />
       </main>

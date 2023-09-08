@@ -1,0 +1,47 @@
+/* .container {
+  max-width: 800px;
+  margin: 0 auto;
+} */
+
+.offerItem p {
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; */
+  height: 100vh;
+}
+
+.header {
+  border: 1px solid;
+  /* height: 40px; */
+  /* flex: 0 0 40px; */
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.messagesContainer {
+  border: 1px solid;
+  /* height: calc(100vh - 40px); */
+  /* overflow-y: scroll; */
+  overflow: auto;
+  flex: 1 0;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.inputContainer {
+  border: 1px solid;
+  /* height: 40px; */
+  /* flex: 0 0 40px; */
+}

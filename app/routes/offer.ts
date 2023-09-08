@@ -6,6 +6,7 @@ import {User} from '../entity/User';
 const offerRouter = express.Router();
 
 offerRouter.get('/', async (req, res) => {
+  // const id = Number(req.params.id);
   const offers = await postgresDS.getRepository(Offer).find({
     relations: {
       user: true,
@@ -14,13 +15,14 @@ offerRouter.get('/', async (req, res) => {
   res.send(offers);
 });
 
-offerRouter.get('/users', async (req, res) => {
-  const users = await postgresDS.getRepository(User).findOne({
+offerRouter.get('/:id', async (req, res) => {
+  const id = Number(req.params.id);
+  const users = await postgresDS.getRepository(Offer).findOne({
     where: {
-      id: 3,
+      id,
     },
     relations: {
-      offers: true,
+      user: true,
     },
   });
   res.send(users);

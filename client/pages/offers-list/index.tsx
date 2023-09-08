@@ -6,7 +6,7 @@ import OfferItem from '../../components/offer-item';
 import {fetchOffers} from '../../redux/offerReducer';
 
 const OffersList = () => {
-  const offers = useAppSelector(state => state.offers.data);
+  const offers = useAppSelector(state => state.offers.list);
 
   const dispatch = useAppDispatch();
   console.log(1, offers);

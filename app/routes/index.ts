@@ -7,7 +7,7 @@ const baseRouter = express.Router();
 
 // baseRouter.use('/books', booksRouter);
 
-baseRouter.use('/user', userRouter);
-baseRouter.use('/offer', offerRouter);
+baseRouter.use('/users', userRouter);
+baseRouter.use('/offers', offerRouter);
 
 export default baseRouter;
