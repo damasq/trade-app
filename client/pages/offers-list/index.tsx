@@ -14,7 +14,7 @@ const OffersList = () => {
   useEffect(() => {
     dispatch(fetchOffers());
     console.log('useEffect');
-  }, []);
+  }, [offers]);
 
   return (
     <div className={styles.container}>

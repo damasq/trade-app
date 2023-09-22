@@ -1,0 +1,9 @@
+.wrapper {
+  border: 1px solid;
+  padding: 10px;
+}
+
+.newOfferForm input {
+  margin-bottom: 12px;
+  width: 100%;
+}

@@ -1,7 +1,7 @@
 import express from 'express';
-import {postgresDS} from '../data-source';
-import {Offer} from '../entity/Offer';
-import {User} from '../entity/User';
+import { postgresDS } from '../data-source';
+import { Offer } from '../entity/Offer';
+import { User } from '../entity/User';
 
 const offerRouter = express.Router();
 
@@ -15,9 +15,10 @@ offerRouter.get('/', async (req, res) => {
   res.send(offers);
 });
 
+
 offerRouter.get('/:id', async (req, res) => {
   const id = Number(req.params.id);
-  const users = await postgresDS.getRepository(Offer).findOne({
+  const offer = await postgresDS.getRepository(Offer).findOne({
     where: {
       id,
     },
@@ -25,8 +26,43 @@ offerRouter.get('/:id', async (req, res) => {
       user: true,
     },
   });
-  res.send(users);
+  // console.log(offer)
+
+  res.send(offer);
 });
+// 
+
+offerRouter.delete('/:id', async (req, res) => {
+  const id = Number(req.params.id);
+
+  const offer = await postgresDS.getRepository(Offer).findOneBy({ id }) as Offer
+  await postgresDS.getRepository(Offer).remove(offer)
+
+  res.send()
+})
+
+offerRouter.post('/', async (req, res) => {
+  const { give, want } = req.body.data
+  const offer = new Offer();
+  offer.give = give;
+  offer.want = want;
+  offer.date = new Date().toLocaleString('en-GB', { timeZone: 'UTC' });
+
+  const user = await postgresDS.getRepository(User).findOne({
+    where: {
+      id: 1,
+    },
+    relations: {
+      offers: true,
+    },
+  });
+  // 
+  offer.user = user as User
+
+  // user?.offers.push(offer)
+  await postgresDS.getRepository(Offer).save(offer)
+  // 
+})
 
 offerRouter.get('/add_data', async (req, res) => {
   const offer = new Offer();

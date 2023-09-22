@@ -5,15 +5,13 @@ import searchIcon from './img/Search_light.svg';
 import cartIcon from './img/Basket_alt_2_light.svg';
 import {Link, Outlet} from 'react-router-dom';
 
-// console.log('sad', logo);
-
 const Layout = () => {
   // const logo = require('./Logo.svg') as string;
   return (
     <div className={styles.wrapper}>
-      {/* <header className={styles.header}>
+      <header className={styles.header}>
         <div className={styles.container}>
-          <img src={menuIcon} alt="" />
+          <img id={styles.menuIcon} src={menuIcon} alt="" />
           <div id={styles.mock}></div>
         </div>
 
@@ -24,8 +22,9 @@ const Layout = () => {
           <Link to="cart">
             <img id={styles.cartIcon} src={cartIcon} alt="" />
           </Link>
+          <Link to={'/offers/form'}>New offer</Link>
         </div>
-      </header> */}
+      </header>
       <main className={styles.content}>
         <Outlet />
       </main>

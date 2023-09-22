@@ -8,20 +8,16 @@ const OfferPage = () => {
   const offer = useAppSelector(state => state.offers.single);
   const dispatch = useAppDispatch();
   const params = useParams();
-  // console.log(123123, params);
-  // console.log(123123, Number(params.id));
-  console.log(offer);
-
-  // fetchOfferById(id)
 
   useEffect(() => {
+    console.log(params.id);
     dispatch(fetchOfferById(Number(params.id)));
   }, []);
 
   return (
     <div className={styles.wrapper}>
       <span className={`${styles.linkStyle} ${styles.profileLink}`}>
-        <Link to={`/users/${offer.user.id}`}>{offer.user.username}</Link>
+        <Link to={`/users/${offer.user?.id}`}>{offer.user?.username}</Link>
       </span>
       <p>{offer.want}</p>
 

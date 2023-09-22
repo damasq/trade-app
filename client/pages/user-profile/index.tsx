@@ -3,9 +3,11 @@ import Icon from '../../components/icon';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks';
 import {useEffect} from 'react';
 import {Link, useParams} from 'react-router-dom';
-import {fetchProfile} from '../../redux/userReducer';
+import {fetchProfile, removeOfferById} from '../../redux/userReducer';
 
 const UserOfferItem = ({offer}: any) => {
+  const dispatch = useAppDispatch();
+
   console.log(12, offer);
   return (
     <div className={styles.wrapper}>
@@ -20,6 +22,10 @@ const UserOfferItem = ({offer}: any) => {
             <Link to={`/offers/${offer.id}`}>Open</Link>
           </span>
         </div>
+
+        <button onClick={() => dispatch(removeOfferById(offer.id))} className={styles.deleteBtn}>
+          X
+        </button>
       </div>
     </div>
   );
@@ -44,9 +50,13 @@ const UserProfile = () => {
       <h3>Offers List</h3>
 
       <div className={styles.offersList}>
-        {offers.map(offer => (
-          <UserOfferItem key={offer.id} offer={offer} />
-        ))}
+        {offers ? (
+          offers.map(offer => <UserOfferItem key={offer.id} offer={offer} />)
+        ) : (
+          <div>
+            <p>No Offers</p>
+          </div>
+        )}
       </div>
     </div>
   );

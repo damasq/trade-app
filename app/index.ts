@@ -2,11 +2,11 @@ import 'reflect-metadata';
 import express from 'express';
 
 import baseRouter from './routes';
-import {reactPages, pagesHandler, startReactServer} from './react-dev-server';
-import {postgresDS} from './data-source';
-import {offersMock} from './data.js';
-import {User} from './entity/User';
-import {Offer} from './entity/Offer';
+import { reactPages, pagesHandler, startReactServer } from './react-dev-server';
+import { postgresDS } from './data-source';
+import { offersMock } from './data.js';
+import { User } from './entity/User';
+import { Offer } from './entity/Offer';
 
 postgresDS
   .initialize()
@@ -33,6 +33,8 @@ postgresDS
 const app = express();
 const port = 3000;
 
+app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
 app.use('/api', baseRouter);
 
 app.use(reactPages);

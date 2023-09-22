@@ -12,15 +12,39 @@ export interface BooksState {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
 }
 
-export type Offer = {
+// export interface Offer {
+//   date: string;
+//   give: string;
+//   want: string;
+//   id: number;
+//   user: User
+// };
+
+// export interface User {
+//   id: number;
+//   username: string;
+// }
+
+export interface Offer {
   date: string;
   give: string;
   want: string;
   id: number;
-  user: User
+  user: {
+    id: number;
+    username: string;
+  }
 };
 
-export type User = {
+export interface User {
   id: number;
   username: string;
+  offers: UserOffer[]
+}
+
+interface UserOffer {
+  date: string;
+  give: string;
+  want: string;
+  id: number;
 }
