@@ -29,6 +29,7 @@ export const addNewOffer = createAsyncThunk<any, any>('offers/addNewOffer', asyn
   console.log(formData)
   const response = await axios.post('/api/offers/', { data: Object.fromEntries(formData.entries()) });
   // return response.data;
+  return
 });
 
 

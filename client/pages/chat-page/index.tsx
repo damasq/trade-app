@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import {useParams} from 'react-router-dom';
-import MessageItem from '../../components/message-item';
+import {Link, useParams} from 'react-router-dom';
+import ChatPageItem from '../../components/message-item';
 import {useAppSelector} from '../../redux/hooks';
 import styles from './style.css';
 
@@ -19,17 +19,20 @@ const ChatPage = () => {
     <div className={styles.wrapper}>
       {/* <div className={styles.chatItem}> */}
       <div className={styles.header}>
-        <button>back</button>
+        <Link to="/dialogs">
+          <button className={styles.backBtn}>&lt;</button>
+        </Link>
         <div className={styles.avatar}></div>
-        <p>Username</p>
+        <p className={styles.username}>Username</p>
       </div>
       <div className={styles.messagesContainer}>
         {messages.map((message, i) => (
-          <MessageItem key={i} message={message} i={i} />
+          <ChatPageItem key={i} message={message} i={i} />
         ))}
       </div>
       <div className={styles.inputContainer}>
         <input
+          className={styles.input}
           value={text}
           onChange={event => {
             setText(event.target.value);
@@ -37,8 +40,8 @@ const ChatPage = () => {
           type="text"
           placeholder="type message"
         />
-        <button onClick={messageHandler} type="button">
-          Send
+        <button className={styles.sendBtn} onClick={messageHandler} type="button">
+          &gt;
         </button>
       </div>
       {/* </div> */}

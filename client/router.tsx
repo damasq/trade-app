@@ -5,6 +5,7 @@ import UserProfile from './pages/user-profile';
 import OfferPage from './pages/offer-page';
 import OfferFormPage from './pages/offer-form';
 import ChatPage from './pages/chat-page';
+import ChatsList from './pages/chats-list';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ export const router = createBrowserRouter(
           <Route path=":id" element={<OfferPage />} />
           <Route path="form" element={<OfferFormPage />} />
         </Route>
+        <Route path="dialogs" element={<ChatsList />} />
       </Route>
 
       <Route path="chat" element={<ChatPage />} />

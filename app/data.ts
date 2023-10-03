@@ -1,16 +1,16 @@
 export const offersMock = [
   {
-    username: 'USERNAME-1',
+    username: 'Jack',
     offers: [
       {
-        give: 'GIVE-1',
-        want: 'WANT-1',
-        date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'}),
+        give: 'iPhone X',
+        want: 'Laptop',
+        date: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
       },
       {
         give: 'GIVE-01',
         want: 'WANT-01',
-        date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'}),
+        date: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
       },
     ],
   },
@@ -20,7 +20,7 @@ export const offersMock = [
       {
         give: 'GIVE-2',
         want: 'WANT-2',
-        date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'}),
+        date: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
       },
     ],
   },
@@ -30,12 +30,12 @@ export const offersMock = [
       {
         give: 'GIVE-3',
         want: 'WANT-3',
-        date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'}),
+        date: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
       },
       {
         give: 'GIVE-03',
         want: 'WANT-03',
-        date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'}),
+        date: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
       },
     ],
   },

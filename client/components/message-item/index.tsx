@@ -6,7 +6,7 @@ interface Props {
   offer: Offer;
 }
 
-const MessageItem = ({message, i}: any) => {
+const ChatPageItem = ({message, i}: any) => {
   return (
     <div className={styles.wrapper}>
       <p className={styles.text}>
@@ -16,4 +16,4 @@ const MessageItem = ({message, i}: any) => {
   );
 };
 
-export default MessageItem;
+export default ChatPageItem;

@@ -16,6 +16,13 @@ const OfferPage = () => {
 
   return (
     <div className={styles.wrapper}>
+      <div className={styles.images}>
+        <div className={styles.img}></div>
+        <div className={styles.img}></div>
+        <div className={styles.img}></div>
+        <div className={styles.img}></div>
+      </div>
+
       <span className={`${styles.linkStyle} ${styles.profileLink}`}>
         <Link to={`/users/${offer.user?.id}`}>{offer.user?.username}</Link>
       </span>
@@ -23,8 +30,15 @@ const OfferPage = () => {
 
       <p>{offer.give}</p>
 
+      <h3>Description</h3>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus asperiores fugiat magni, sapiente cumque
+        nihil aliquid ut. Dicta maxime magnam rerum modi ea nobis earum vero, iusto mollitia quos labore!
+      </p>
+
       <div className={styles.bottomBlock}>
-        <p className={styles.date}>{offer.date}</p>
+        <p className={styles.date}>published at {offer.date}</p>
       </div>
 
       <button>Open chat</button>

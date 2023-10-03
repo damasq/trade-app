@@ -15,22 +15,39 @@
 }
 
 .header {
-  border: 1px solid;
+  /* border: 1px solid; */
   /* height: 40px; */
   /* flex: 0 0 40px; */
   display: flex;
   align-items: center;
+  padding: 4px 0;
+  background: rgb(230, 230, 230);
+}
+
+.backBtn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  /* background-color: red; */
+  font-size: 22px;
+  /* font-weight: bold; */
+  background: inherit;
 }
 
 .avatar {
   width: 40px;
   height: 40px;
-  background-color: red;
+  background-color: grey;
   border-radius: 50%;
+  /* margin-left: 10px; */
+}
+
+.username {
+  margin-left:10px;
 }
 
 .messagesContainer {
-  border: 1px solid;
+  /* border: 1px solid; */
   overflow: auto;
   flex: 1 0;
   padding: 0 12px;
@@ -39,7 +56,24 @@
 }
 
 .inputContainer {
-  border: 1px solid;
+  /* border-top: 1px solid; */
+  padding: 4px;
+  background: rgb(230, 230, 230);
   /* height: 40px; */
-  /* flex: 0 0 40px; */
+  flex: 0 0 48px;
+  display: flex;
+}
+
+.input {
+  flex: 1 0;
+  border: none;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.sendBtn {
+  width: 40px;
+  font-size: 22px;
+  border: none;
+  background: inherit;
 }

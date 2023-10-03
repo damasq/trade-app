@@ -4,6 +4,10 @@
   margin-bottom: 10px;
 }
 
+.wrapper:last-child {
+  /* padding-top: 20px; */
+}
+
 .text {
   display: inline-block;
   /* background-color: red; */
