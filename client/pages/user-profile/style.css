@@ -3,23 +3,55 @@
 .container {
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 10px;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+}
+
+.profile {
+  padding: 20px 0;
+  display: flex;
 }
 
 .avatar {
+  flex: 0 0 150px;
   width: 150px;
   height: 150px;
-  background: red;
+  background: grey;
+  border-radius: 50%;
 }
 
-.wrapper {
-  border: 1px solid;
+.info {
+  margin-left: 10px;
+}
+
+
+.username {
+
+}
+
+.description {
+
+}
+
+.registrationDate {
+  font-size: 14px;
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.offerListTitle {
+  margin-bottom: 10px;
 }
 
 /* USER-OFFER-ITEM */
 
 .wrapper {
-  border: 1px solid;
+  /* border: 1px solid; */
   padding: 10px;
+  background: rgb(248, 248, 248);
+  margin-bottom: 4px;
+  border-radius: 10px;
 }
 
 .offerItem {

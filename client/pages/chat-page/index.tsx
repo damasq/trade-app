@@ -4,14 +4,49 @@ import ChatPageItem from '../../components/message-item';
 import {useAppSelector} from '../../redux/hooks';
 import styles from './style.css';
 
-const arr = Array(20).fill('Lorem ipsum dolor sit amet.');
+const words = [
+  'Lorem',
+  'ipsum,',
+  'dolor',
+  'sit',
+  'amet',
+  'consectetur',
+  'adipisicing',
+  'elit.',
+  'Unde',
+  'eveniet',
+  'impedit',
+  'ipsam',
+  'numquam',
+  'vel',
+  'natus',
+  'quidem',
+  'at,',
+  'maiores',
+  'expedita',
+  'consequuntur!',
+];
+
+const arr: {sender: string; text: string}[] = [];
+
+for (let i = 0; i < 20; i++) {
+  arr.push({
+    sender: Math.random() > 0.5 ? 'me' : 'somebody',
+    text: words.slice(Math.round(Math.random() * 19)).join(' '),
+  });
+}
+
+// const arr = Array(20).fill({
+//   sender: Math.random() > 0.5 ? 'me' : 'somebody',
+//   text: words.slice(Math.ceil(Math.random() * 20)).join(' '),
+// });
 
 const ChatPage = () => {
   const [messages, setMessages] = useState(arr);
   const [text, setText] = useState('');
 
   const messageHandler = () => {
-    setMessages(prevState => [text, ...prevState]);
+    setMessages(prevState => [{sender: 'me', text}, ...prevState]);
     setText('');
   };
 

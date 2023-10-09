@@ -8,33 +8,33 @@ export const offersMock = [
         date: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
       },
       {
-        give: 'GIVE-01',
-        want: 'WANT-01',
+        give: 'Palit GeForce RTX 3060 StormX',
+        want: 'anything',
         date: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
       },
     ],
   },
   {
-    username: 'USERNAME-2',
+    username: 'Peter',
     offers: [
       {
-        give: 'GIVE-2',
-        want: 'WANT-2',
+        give: 'Printer Canon PIXMA G2411',
+        want: 'Headset',
         date: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
       },
     ],
   },
   {
-    username: 'USERNAME-3',
+    username: 'Alice',
     offers: [
       {
-        give: 'GIVE-3',
-        want: 'WANT-3',
+        give: 'Canon EOS M50 Mark II Kit 15-45mm',
+        want: 'iPhone 12',
         date: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
       },
       {
-        give: 'GIVE-03',
-        want: 'WANT-03',
+        give: 'LG 50UQ76003LD 50" 4K UHD',
+        want: 'PS4',
         date: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
       },
     ],

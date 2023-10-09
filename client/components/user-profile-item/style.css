@@ -1,0 +1,68 @@
+.wrapper {
+  background: rgb(248, 248, 248);
+  margin-bottom: 4px;
+  display: flex;
+}
+
+.offerImage {
+  flex: 0 0 150px;
+  width: 150px;
+  height: 150px;
+  background: grey;
+  /* border-radius: 10px; */
+}
+
+.offerInfo {
+  width: 100%;
+  flex: 1 0;
+  padding: 10px;
+  font-size: 14px;
+  color: #646464;
+  overflow: hidden;
+}
+
+.give, .want {
+  font-size: 16px;
+  color: black;
+  margin-bottom: 6px;
+}
+
+.give, .want, .description, .address {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 6px;
+}
+
+.address {
+  margin-bottom: 6px;
+}
+
+.linkStyle > a {
+  color: #0066ff;
+  text-decoration: none;
+}
+
+.buttons {
+  margin-top: 6px;
+  display: flex;
+  justify-content: end;
+  /* align-items: end; */
+}
+
+.editBtn, .deleteBtn {
+  width: 80px;
+  /* height: 40px; */
+  font-size: 14px;
+  border-radius: 0;
+  background: #ffffff;
+  border: 1px solid grey;
+}
+
+/* .editBtn {
+
+} */
+
+.deleteBtn {
+  margin-left: 4px;
+}

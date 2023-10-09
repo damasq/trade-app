@@ -16,6 +16,9 @@ const ChatsListItem = () => {
       <div className={styles.flexitem_3}>
         <div className={styles.date}>10:00</div>
       </div>
+      <div className={styles.openChatLink}>
+        <Link to="/chat">open</Link>
+      </div>
     </div>
   );
 };

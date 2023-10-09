@@ -9,9 +9,13 @@ interface Props {
 const ChatPageItem = ({message, i}: any) => {
   return (
     <div className={styles.wrapper}>
-      <p className={styles.text}>
-        {message} {i}
-      </p>
+      <div className={message.sender == 'me' ? styles.sent : styles.incoming}>
+        <div>
+          <p className={styles.text}>
+            {message.text} {i}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

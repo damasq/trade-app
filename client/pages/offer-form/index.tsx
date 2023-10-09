@@ -14,7 +14,7 @@ const OfferFormPage = () => {
     const formData = new FormData(form);
 
     dispatch(addNewOffer(formData));
-    navigate('/');
+    navigate('/users/1');
   }
 
   return (
@@ -29,7 +29,19 @@ const OfferFormPage = () => {
           want
           <input id="want" name="want" type="text" />
         </label>
-        <button>submit</button>
+        <label>
+          address
+          <input id="address" name="address" type="text" />
+        </label>
+        <label>
+          description
+          <textarea></textarea>
+        </label>
+        <div className={styles.imgBlock}>
+          img block
+          <input type="file" />
+        </div>
+        <button className={styles.submitBtn}>submit</button>
       </form>
     </div>
   );

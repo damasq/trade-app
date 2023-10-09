@@ -15,15 +15,23 @@ const OfferItem = ({offer}: Props) => {
         <div className={styles.img}></div>
         <div className={styles.img}></div>
       </div>
-      <span className={`${styles.linkStyle} ${styles.profileLink}`}>
-        <Link to={`users/${offer.user.id}`}>{offer.user.username}</Link>
-      </span>
 
-      <p>{offer.give}</p>
+      <div className={styles.info}>
+        <p className={styles.give}>
+          <span>my: </span>
+          {offer.give}
+        </p>
+        <p className={styles.want}>
+          <span>your: </span>
+          {offer.want}
+        </p>
 
-      <p>{offer.want}</p>
+        <span className={`${styles.linkStyle} ${styles.profileLink}`}>
+          <Link to={`users/${offer.user.id}`}>{offer.user.username}</Link>
+        </span>
 
-      <div className={styles.bottomBlock}>
+        <p className={styles.description}>iPhone 2020,</p>
+
         <p className={styles.date}>{offer.date}</p>
         <p className={styles.address}>63 Sutor Drive Ellicott City, MD 21042</p>
         <span className={`${styles.linkStyle} ${styles.offerLink}`}>

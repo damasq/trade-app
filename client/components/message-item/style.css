@@ -1,17 +1,25 @@
 .wrapper {
-  /* border: 1px solid;
-  padding: 10px; */
   margin-bottom: 10px;
 }
 
-.wrapper:last-child {
-  /* padding-top: 20px; */
+.sent, .incoming {
+  /* border: 1px solid;
+  padding: 10px; */
+  width: 80%;
+  /* max-width: 500px; */
+  /* display: flex; */
+  /* border: 1px solid black; */
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 12px 12px 12px 0;
 }
 
-.text {
-  display: inline-block;
-  /* background-color: red; */
-  border: 1px solid;
-  padding: 10px;
-  border-radius: 12px 12px 12px 0;
+.incoming {
+  background: #eeeeee;
+}
+
+.sent {
+  margin-left: auto;
+  border-radius: 12px 12px 0 12px;
+  /* background: #daedff; */
 }
